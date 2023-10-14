@@ -12,7 +12,7 @@ const PfpAndWelcome = () => {
       <Image
         width={100}
         height={100}
-        src="/profile.png"
+        src="/dummy-img/profile.png"
         className="w-[50px] h-[50px]"
         alt="profile"
       />

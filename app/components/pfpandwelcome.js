@@ -1,10 +1,12 @@
 import Image from "next/image";
+import { getAuth } from "firebase/auth";
+
 
 const PfpAndWelcome = () => {
   return (
     <div className="flex flex-row justify-between items-center">
       <div className="flex flex-col">
-        <h1 className="text-[24px] text-white font-bold">Hi Rohan! 👋</h1>
+        <h1 className="text-[24px] text-white font-bold">Hi {getAuth().currentUser.displayname.split(" ")[0]}! 👋</h1>
         <p className="text-[20px] -mt-2 text-[#FFFFFFCC] font-medium">
           Ready to go green?
         </p>

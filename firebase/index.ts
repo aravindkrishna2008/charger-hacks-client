@@ -7,13 +7,13 @@ import { getAnalytics } from "firebase/analytics";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyChXEvqxKN96_Eeolumn_E4mKtR44Fd8P0",
-  authDomain: "ecocard-43296.firebaseapp.com",
-  projectId: "ecocard-43296",
-  storageBucket: "ecocard-43296.appspot.com",
-  messagingSenderId: "934703807332",
-  appId: "1:934703807332:web:b85cfb7a763f22f667d871",
-  measurementId: "G-4ECL0D5H22"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_PROJECT_ID ,
+  storageBucket: process.env.STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_APP_ID,
+  measurementId: process.env.MEASUREMENT_ID
 };
 
 // Initialize Firebase

@@ -1,5 +1,12 @@
+import { getAuth } from "firebase/auth";
 import Image from "next/image";
+import { getData } from "../../lib/utils/data"
 const Card = () => {
+
+  const getDetails = () => {
+    let data = getData()
+    return data
+  }
   return (
     <div
       style={{
@@ -9,7 +16,7 @@ const Card = () => {
       className="mt-[25px] p-[25px] rounded-lg w-[100%] h-[207px] flex flex-col gap-[4px]"
     >
       <div className="flex flex-row justify-between items-center">
-        <h1 className="text-white text-[20px] font-semibold">Rohan Fernades</h1>
+        <h1 className="text-white text-[20px] font-semibold">{getAuth().currentUser.displayName}</h1>
         <div className="flex flex-row gap-2">
           <Image
             src="/icon/lock.png"
@@ -47,11 +54,11 @@ const Card = () => {
           <div className="w-[6px] h-[6px] rounded-full bg-white"></div>
         </div>
         <div className="flex flex-row gap-[4.5px]">
-          <div className="text-[12px] text-white font-semibold">6942</div>
+          <div className="text-[12px] text-white font-semibold">{getDetails().card_number}</div>
         </div>
       </div>
       <p className="text-[12px] text-white font-semibold mt-[2px]">
-        Exp: 10/23
+        {getDetails().expire_date}
       </p>
       <div className="flex flex-row justify-between mt-8">
         <div className="flex flex-row">

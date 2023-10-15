@@ -15,8 +15,8 @@ export default function RootLayout({ children }) {
         <head />
         <body>
           <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
+            attribute={env.NEXT_ATTRIBUTE}
+            defaultTheme={system}
             enableSystem
             disableTransitionOnChange
           >

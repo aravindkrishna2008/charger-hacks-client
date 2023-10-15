@@ -1,9 +1,12 @@
 "use client";
 import { useRef } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 const ThreeButtons = () => {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
+
+  let router = useRouter();
 
   const handleCameraButtonClick = () => {
     const inputElement = document.createElement("input");
@@ -49,6 +52,21 @@ const ThreeButtons = () => {
         <button
           className="flex flex-col items-center h-[77px] p-1 w-[28vw] bg-[#8880DB] text-[#FFFFFFCC] rounded-lg text-[14px]   justify-center"
           onClick={handleCameraButtonClick}
+        >
+          <Image
+            src="/icon/search.png"
+            width={50}
+            height={50}
+            alt="camera"
+            className="w-[8vw] h-[8vw] mb-1"
+          />
+          Scan Barcode
+        </button>
+      </div>
+      <div>
+        <button
+          className="flex flex-col items-center h-[77px] p-1 w-[28vw] bg-[#db808f] text-[#FFFFFFCC] rounded-lg text-[14px]   justify-center"
+          onClick={() => router.push("/profile")}
         >
           <Image
             src="/icon/search.png"
